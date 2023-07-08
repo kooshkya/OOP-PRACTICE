@@ -7,8 +7,6 @@ class Ad(BaseAdvertising):
         self._imageUrl = imageUrl
         self._link = link
         self._advertiser = advertiser
-        self._views = 0
-        self._clicks = 0
 
     
     def getTitle(self):

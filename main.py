@@ -23,6 +23,7 @@ advertiser2.setName("new name")
 print(advertiser2.getName())
 print(ad1.getClicks())
 print(advertiser2.getClicks())
+print(ad1.getViews())
 print(Advertiser.getTotalClicks())
 print(Advertiser.help())
 

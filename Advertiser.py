@@ -14,8 +14,6 @@ class Advertiser(BaseAdvertising):
     def __init__(self, name="advertiser"):
         super().__init__()
         self._name = name
-        self._views = 0
-        self._clicks = 0
         Advertiser._instances.append(self)
 
     
@@ -37,5 +35,3 @@ class Advertiser(BaseAdvertising):
     @staticmethod
     def describeMe():
         return "I am the Advertiser class. I hold data like click count and view count for each of our clients."
-
-print(Advertiser.help())
