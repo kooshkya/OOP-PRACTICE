@@ -1,13 +1,8 @@
-class Advertiser:
-    _nextId = 1
+from BaseAdvertising import BaseAdvertising
+
+class Advertiser(BaseAdvertising):
     _instances = []
 
-    @classmethod
-    def generateNewId(cls):
-        thisId = _nextId
-        _nextId += 1
-        return thisId
-    
     @classmethod
     def getTotalClicks(cls):
         result = 0
@@ -17,8 +12,8 @@ class Advertiser:
 
 
     def __init__(self, name="advertiser"):
+        super().__init__()
         self._name = name
-        self._id = Advertiser.generateNewId()
         self._views = 0
         self._clicks = 0
         Advertiser._instances.append(self)
@@ -39,18 +34,6 @@ class Advertiser:
         helpText += "clicks: This is the number of times that the advertiser's ad has been clicked on\n"
         return helpText
     
-    def getClicks(self):
-        return self._clicks
-    
-    def getViews(self):
-        return self._views
-    
-    def incClicks(self):
-        self._clicks += 1
-
-    def incViews(self):
-        self._views += 1
-
     @staticmethod
     def describeMe():
         return "I am the Advertiser class. I hold data like click count and view count for each of our clients."
